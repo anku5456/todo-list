@@ -1,0 +1,35 @@
+body {
+    background-color: #E4E9FD;
+    background-image: -webkit-linear-gradient(65deg, #A683E3 50%, #E4E9FD 50%);
+    min-height: 1000px;
+    font-family: 'helvetica neue';
+  }
+  .btn-primary {
+    background-color: #A683E3 !important;
+  }
+  
+        .container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .task-list {
+            list-style: none;
+            padding: 0;
+        }
+        .task-list li {
+            margin-bottom: 10px;
+        }
+        .task-list li:last-child {
+            margin-bottom: 0;
+        }
+        .task-text {
+            display: flex;
+            align-items: center;
+        }
+        .task-delete {
+            display: flex;
+            align-items: center;
+        }

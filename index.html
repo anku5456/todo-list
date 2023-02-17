@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Todo List</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+          <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+<div class="container">
+    <div class="col-md-6">
+        <h1 class="text-center mb-4">Todo List</h1>
+        <form method="POST" action="/">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Enter task" name="task" required>
+                <div class="input-group-append">
+                    <button class="btn btn-primary" type="submit">Add Task</button>
+                </div>
+            </div>
+        </form>
+        <ul class="task-list">
+            {% for task in tasks %}
+            <li class="row">
+                <div class="task-text col-md-9">
+                   <h3>{{ task }}</h3> 
+                </div>
+                <div class="task-delete col-md-3">
+                    <form method="GET" action="/">
+                        <input type="hidden" name="delete" value="{{ task }}">
+                        <button type="submit" class="btn btn-warning">Delete</button>
+                    </form>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5"></script>
+</body>
+</html>
